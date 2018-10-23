@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="864.0" prefWidth="673.0" style="-fx-background-color: #ddf0ff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Controller">
+   <ScrollPane id="outputWindow" layoutX="16.0" layoutY="30.0" prefHeight="258.0" prefWidth="643.0">
+      <TextArea fx:id="outputZone" editable="false" prefHeight="255.0" prefWidth="640.0" wrapText="true" />
+   </ScrollPane>
+   <Button id="buttonSendMessage" fx:id="sendMessage" layoutX="541.0" layoutY="418.0" mnemonicParsing="false" onAction="#onClickSendMessage" style="-fx-background-color: #1dbdf7; -fx-text-fill: #FFF;" text="Send message" />
+   <Button id="buttonClearWindow" fx:id="clearOutputWindow" layoutX="499.0" layoutY="296.0" mnemonicParsing="false" onAction="#onClickClearOutputWindow" style="-fx-background-color: #1dbdf7; -fx-text-fill: #FFF;" text="Clear output window" wrapText="true" />
+   <Label graphicTextGap="5.0" layoutX="14.0" layoutY="351.0" prefHeight="20.0" prefWidth="98.0" style="-fx-font-size: 12pt;" text="Input zone" textAlignment="CENTER" />
+   <Label layoutX="14.0" layoutY="5.0" style="-fx-font-size: 12pt;" text="Output zone" textAlignment="CENTER" />
+   <Line endX="100.0" layoutX="572.0" layoutY="342.0" startX="-570.7070922851562" stroke="#336486" />
+   <ChoiceBox fx:id="portNumber" layoutX="257.0" layoutY="513.0" prefHeight="31.0" prefWidth="95.0" />
+   <Label layoutX="49.0" layoutY="558.0" text="Select the work type:" />
+   <TextField fx:id="inputZone" layoutX="14.0" layoutY="380.0" prefHeight="32.0" prefWidth="643.0" promptText="Please, enter yout message" />
+   <Label layoutX="49.0" layoutY="518.0" text="Select com port number:" />
+   <ChoiceBox fx:id="workType" layoutX="257.0" layoutY="552.0" prefHeight="31.0" prefWidth="95.0" />
+   <Label layoutX="296.0" layoutY="634.0" style="-fx-font-size: 12pt;" text="Information">
+      <effect>
+         <Bloom />
+      </effect>
+   </Label>
+   <Label layoutX="46.0" layoutY="659.0" text="Transferred bytes number:" />
+   <Button id="XOFF" fx:id="selectedXOFF" layoutX="325.0" layoutY="594.0" mnemonicParsing="false" onAction="#onClickXOFF" text="XOFF" />
+   <Label layoutX="46.0" layoutY="683.0" text="Received bytes numder:" />
+   <Label fx:id="transferredBytes" layoutX="257.0" layoutY="659.0" text="0" />
+   <Text fx:id="receivedBytes" layoutX="257.0" layoutY="696.0" text="0" />
+   <Button fx:id="closePort" layoutX="482.0" layoutY="513.0" mnemonicParsing="false" onAction="#onClickClosePort" text="Close port" />
+   <Button fx:id="openPort" layoutX="370.0" layoutY="513.0" mnemonicParsing="false" onAction="#onClickOpenPort" text="Open port" />
+   <Button id="XON" fx:id="selectedXON" layoutX="257.0" layoutY="594.0" mnemonicParsing="false" onAction="#onClickXON" text="XON" />
+   <Label layoutX="311.0" layoutY="480.0" style="-fx-font-size: 12pt;" text="Control">
+      <effect>
+         <Bloom />
+      </effect>
+   </Label>
+   <Label layoutX="47.0" layoutY="600.0" text="Select what you want send:" />
+   <Label layoutX="15.0" layoutY="470.0" style="-fx-font-size: 12pt;" text="Debug zone" />
+   <Line endX="100.0" layoutX="572.0" layoutY="462.0" startX="-570.7070922851562" stroke="#336486" />
+   <Label layoutX="46.0" layoutY="706.0" text="Port status:" />
+   <Label fx:id="portStatus" layoutX="256.0" layoutY="704.0" text="Port isn't selected" />
+   <Label fx:id="error" layoutX="46.0" layoutY="795.0" prefHeight="28.0" prefWidth="174.0" textFill="RED">
+      <font>
+         <Font name="System Bold" size="19.0" />
+      </font>
+   </Label>
+   <Label fx:id="errorMessage" layoutX="259.0" layoutY="796.0" prefHeight="28.0" prefWidth="388.0" textFill="RED">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Label>
+   <Label fx:id="informationAboutXonXoff" layoutX="46.0" layoutY="730.0" prefHeight="26.0" prefWidth="174.0" textFill="#0a8a30">
+      <font>
+         <Font size="17.0" />
+      </font>
+   </Label>
+   <Text fx:id="statusMessageXonXoff" fill="#0a8a30" layoutX="256.0" layoutY="749.0" strokeType="OUTSIDE" strokeWidth="0.0">
+      <font>
+         <Font size="17.0" />
+      </font>
+   </Text>
+   <Text fx:id="stateReceivedXonXoff" fill="#0a8a30" layoutX="46.0" layoutY="781.0" text="" wrappingWidth="106.0">
+      <font>
+         <Font size="17.0" />
+      </font>
+   </Text>
+   <Text fx:id="receivedXonXoff" fill="#0a8a30" layoutX="255.0" layoutY="782.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="54.80468731932342">
+      <font>
+         <Font size="17.0" />
+      </font>
+   </Text>
+</Pane>
